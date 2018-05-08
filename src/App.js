@@ -6,12 +6,16 @@ class App extends Component {
 
   state = {
     taskList : [
-      {"id": "00001",
+      {
         task: "My first task",
         isComplete: false,
       },
       {
         task: "My second task",
+        isComplete: false,
+      },
+      {
+        task: "Go to bed early",
         isComplete: false,
       },
     ],
@@ -28,7 +32,7 @@ class App extends Component {
 		  	     <div id="todoBox" className="todoBox col-xs-6 col-xs-offset-3">
                <div className="well">
                  <h1 className="vert-offset-top-0">My To do's:</h1>
-                 <TaskList />
+                 <TaskList tasks={this.state.taskList}/>
                   <div className="commentForm vert-offset-top-2">
              				<hr />
              				<div className="clearfix">

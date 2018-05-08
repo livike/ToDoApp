@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import TaskList from './TaskList';
 
 class App extends Component {
 
@@ -27,16 +28,7 @@ class App extends Component {
 		  	     <div id="todoBox" className="todoBox col-xs-6 col-xs-offset-3">
                <div className="well">
                  <h1 className="vert-offset-top-0">My To do's:</h1>
-                 <ul className="list-group">
-                   <li className="list-group-item clearfix">
-                    <label> <input type="checkbox" /></label>
-                     <span>This is a hardcoded task</span>
-                     <div className="pull-right" role="group">
-                       <button type="button" className="btn btn-xs btn-warning img-circle">&#x270e;</button>
-                       <button type="button" className="btn btn-xs btn-danger img-circle" >&#xff38;</button>
-                     </div>
-                   </li>
-            			</ul>
+                 <TaskList />
                   <div className="commentForm vert-offset-top-2">
              				<hr />
              				<div className="clearfix">

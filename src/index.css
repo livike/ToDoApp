@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+button {
+  margin: 0 4px;
+}
+
+li{
+  text-align: left;
+}
+
+input[type=checkbox]{
+  margin-right: 10px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.todoBox {
+  margin: 0 auto;
+}

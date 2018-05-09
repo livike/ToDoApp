@@ -22,7 +22,7 @@ const Task = props =>{
           type="button"
           className="btn btn-xs btn-warning img-circle"
           onClick={props.handleEditing}>
-          &#x270e;
+          {props.isEditing ? "save" : "\u270E"}
         </button>
         <button type="button" className="btn btn-xs btn-danger img-circle" >&#xff38;</button>
       </div>

@@ -21,6 +21,18 @@ class App extends Component {
     ],
   };
 
+  toggleConfirmationAt = indexToChange =>
+    this.setState({
+      taskList: this.state.taskList.map((task, index)=>{
+        if (index === indexToChange){
+          return {
+          isConfirmed: !task.isConfirmed
+          };
+        }
+        return task;
+      })
+    });
+
   render() {
     return (
       <div className="App">

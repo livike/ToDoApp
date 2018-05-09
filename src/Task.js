@@ -16,7 +16,7 @@ const Task = props =>
         </div>
       </li>
 
-    Task.PropTypes = {
+    Task.propTypes = {
       task: PropTypes.string.isRequired,
       isConfirmed: PropTypes.bool.isRequired,
       handleConfirmation: PropTypes.func.isRequired,

@@ -13,7 +13,7 @@ const TaskList = props =>
        )}
     </ul>;
 
-    TaskList.PropTypes = {
+    TaskList.propTypes = {
       tasks: PropTypes.array.isRequired,
       toggleConfirmationAt: PropTypes.func.isRequired,
     }

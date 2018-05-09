@@ -8,15 +8,15 @@ class App extends Component {
     taskList : [
       {
         task: "My first task",
-        isComplete: false,
+        isConfirmed: false,
       },
       {
         task: "My second task",
-        isComplete: false,
+        isConfirmed: false,
       },
       {
         task: "Go to bed early",
-        isComplete: false,
+        isConfirmed: false,
       },
     ],
   };

@@ -24,7 +24,12 @@ const Task = props =>{
           onClick={props.handleEditing}>
           {props.isEditing ? "save" : "\u270E"}
         </button>
-        <button type="button" className="btn btn-xs btn-danger img-circle" >&#xff38;</button>
+        <button
+          type="button"
+          onClick={props.handleDelete}
+          className="btn btn-xs btn-danger img-circle" >
+          &#xff38;
+        </button>
       </div>
     </li>
   )
@@ -36,6 +41,7 @@ const Task = props =>{
     handleConfirmation: PropTypes.func.isRequired,
     handleEditing: PropTypes.func.isRequired,
     setTask: PropTypes.func.isRequired,
+    handleDelete: PropTypes.func.isRequired,
   }
 
 export default Task;

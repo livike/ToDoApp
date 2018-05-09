@@ -57,6 +57,15 @@ class App extends Component {
       })
     });
 
+  deleteTaskAt = index =>{
+    this.setState({
+      taskList: [
+        ...this.state.taskList.slice(0,index),
+        ...this.state.taskList.slice(index+1)
+      ]
+    })
+  }
+
   handleTaskInput = e =>
     this.setState({
       addedTask: e.target.value
@@ -94,6 +103,7 @@ class App extends Component {
                    toggleConfirmationAt={this.toggleConfirmationAt}
                    toggleEditingAt={this.toggleEditingAt}
                    setTaskAt={this.setTaskAt}
+                   deleteTaskAt={this.deleteTaskAt}
                   />
                   <div className="commentForm vert-offset-top-2">
              				<hr />

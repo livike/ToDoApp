@@ -21,7 +21,7 @@ const Task = props =>{
         <button
           type="button"
           className="btn btn-xs btn-warning img-circle"
-          onClick={props.handleEditing}>
+          onClick={props.isConfirmed ? false : props.handleEditing}>
           {props.isEditing ? "save" : "\u270E"}
         </button>
         <button

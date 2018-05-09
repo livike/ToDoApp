@@ -12,7 +12,9 @@ const Task = props =>{
               checked={props.isConfirmed}
               onChange= {props.handleConfirmation} />
     </label>
-      <TaskName isEditing={props.isEditing}>
+      <TaskName
+        isEditing={props.isEditing}
+        handleTaskEdits={e => props.setTask(e.target.value)}>
         {props.task}
       </TaskName>
       <div className="pull-right" role="group">
@@ -33,6 +35,7 @@ const Task = props =>{
     isEditing: PropTypes.bool.isRequired,
     handleConfirmation: PropTypes.func.isRequired,
     handleEditing: PropTypes.func.isRequired,
+    setTask: PropTypes.func.isRequired,
   }
 
 export default Task;

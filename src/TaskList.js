@@ -11,7 +11,8 @@ const TaskList = props =>
         isConfirmed={task.isConfirmed}
         isEditing={task.isEditing}
         handleConfirmation={() => props.toggleConfirmationAt(index)}
-        handleEditing={() => props.toggleEditingAt(index)} /> //closure
+        handleEditing={() => props.toggleEditingAt(index)}
+        setTask={ text => props.setTaskAt(text,index)} /> //closure
        )}
     </ul>;
 
@@ -19,6 +20,7 @@ const TaskList = props =>
       tasks: PropTypes.array.isRequired,
       toggleConfirmationAt: PropTypes.func.isRequired,
       toggleEditingAt: PropTypes.func.isRequired,
+      setTaskAt: PropTypes.func.isRequired,
     }
 
 export default TaskList;

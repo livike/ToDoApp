@@ -12,7 +12,12 @@ const Task = props =>{
     </label>
       <span>{props.task}</span>
       <div className="pull-right" role="group">
-        <button type="button" className="btn btn-xs btn-warning img-circle">&#x270e;</button>
+        <button
+          type="button"
+          className="btn btn-xs btn-warning img-circle"
+          onClick={props.handleEditing}>
+          &#x270e;
+        </button>
         <button type="button" className="btn btn-xs btn-danger img-circle" >&#xff38;</button>
       </div>
     </li>
@@ -21,7 +26,9 @@ const Task = props =>{
   Task.propTypes = {
     task: PropTypes.string.isRequired,
     isConfirmed: PropTypes.bool.isRequired,
+    isEditing: PropTypes.bool.isRequired,
     handleConfirmation: PropTypes.func.isRequired,
+    handleEditing: PropTypes.func.isRequired,
   }
 
 export default Task;

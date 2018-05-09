@@ -9,30 +9,39 @@ class App extends Component {
       {
         task: "My first task",
         isConfirmed: false,
+        isEditing: false,
       },
       {
         task: "My second task",
         isConfirmed: false,
+        isEditing: false,
       },
       {
         task: "Go to bed early",
         isConfirmed: false,
+        isEditing: true,
       },
     ],
   };
 
-  toggleConfirmationAt = indexToChange =>
+  toggleTaskPropertyAt = (property,indexToChange)=>
     this.setState({
       taskList: this.state.taskList.map((task, index)=>{
         if (index === indexToChange){
           return {
             ...task,
-            isConfirmed: !task.isConfirmed
+            [property]: !task[property],
           };
         }
         return task;
       })
     });
+
+    toggleConfirmationAt = index =>
+      this.toggleTaskPropertyAt("isConfirmed",index);
+
+    toggleEditingAt = index =>
+      this.toggleTaskPropertyAt("isEditing",index);
 
   render() {
     return (
@@ -48,6 +57,7 @@ class App extends Component {
                  <TaskList
                    tasks={this.state.taskList}
                    toggleConfirmationAt={this.toggleConfirmationAt}
+                   toggleEditingAt={this.toggleEditingAt}
                   />
                   <div className="commentForm vert-offset-top-2">
              				<hr />

@@ -26,7 +26,8 @@ class App extends Component {
       taskList: this.state.taskList.map((task, index)=>{
         if (index === indexToChange){
           return {
-          isConfirmed: !task.isConfirmed
+            ...task,
+            isConfirmed: !task.isConfirmed
           };
         }
         return task;

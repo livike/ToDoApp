@@ -5,6 +5,7 @@ import TaskList from './TaskList';
 class App extends Component {
 
   state = {
+    addedTask: "",
     taskList : [
       {
         task: "My first task",
@@ -19,7 +20,7 @@ class App extends Component {
       {
         task: "Go to bed early",
         isConfirmed: false,
-        isEditing: true,
+        isEditing: false,
       },
     ],
   };
@@ -56,6 +57,27 @@ class App extends Component {
       })
     });
 
+  handleTaskInput = e =>
+    this.setState({
+      addedTask: e.target.value
+    });
+
+  newTaskSubmitHandler = e => {
+    e.preventDefault();
+    this.setState({
+      taskList: [
+        {
+          task: this.state.addedTask,
+          isConfirmed: false,
+          isEditing: false,
+        },
+        ...this.state.taskList
+      ],
+      addedTask: ""
+    })
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -76,11 +98,18 @@ class App extends Component {
                   <div className="commentForm vert-offset-top-2">
              				<hr />
              				<div className="clearfix">
-             					<form className="todoForm form-horizontal">
+             					<form onSubmit={this.newTaskSubmitHandler}  className="todoForm form-horizontal">
              						<div className="form-group">
              							<label htmlFor="task" className="col-md-3 control-label">New Task</label>
              							<div className="col-md-9">
-             								<input type="text" id="task" ref="task" className="form-control" placeholder="What do you need to do?" />
+             								<input
+                              type="text"
+                              onChange={this.handleTaskInput}
+                              value={this.state.addedTask}
+                              id="task"
+                              ref="task"
+                              className="form-control"
+                              placeholder="What do you need to do?" />
              							</div>
              						</div>
              						<div className="row">

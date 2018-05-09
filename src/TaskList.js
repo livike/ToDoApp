@@ -11,6 +11,7 @@ const TaskList = props =>
 
     TaskList.PropTypes = {
       tasks: PropTypes.array.isRequired,
+      toggleConfirmationAt: PropTypes.func.isRequired,
     }
 
 export default TaskList;

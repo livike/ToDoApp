@@ -44,7 +44,10 @@ class App extends Component {
 		  	     <div id="todoBox" className="todoBox col-xs-6 col-xs-offset-3">
                <div className="well">
                  <h1 className="vert-offset-top-0">My To do's:</h1>
-                 <TaskList tasks={this.state.taskList}/>
+                 <TaskList
+                   tasks={this.state.taskList}
+                   toggleConfirmationAt={this.toggleConfirmationAt}
+                  />
                   <div className="commentForm vert-offset-top-2">
              				<hr />
              				<div className="clearfix">

@@ -19,3 +19,6 @@
 .vert-offset-top-2{
     margin-top: 2em;
 }
+.list-group-item-success{
+  text-decoration: line-through;
+}

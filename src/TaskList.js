@@ -5,7 +5,11 @@ import Task from './Task'
 const TaskList = props =>
     <ul className="list-group">
       {props.tasks.map((task,index)=>
-      <Task key={index} task={task.task} isConfirmed={task.isConfirmed} />
+      <Task
+        key={index}
+        task={task.task}
+        isConfirmed={task.isConfirmed}
+        handleConfirmation={() => props.toggleConfirmationAt(index)} /> //closure
        )}
     </ul>;
 

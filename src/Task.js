@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import TaskName from './TaskName';
+
 const Task = props =>{
 
   return (
@@ -10,7 +12,9 @@ const Task = props =>{
               checked={props.isConfirmed}
               onChange= {props.handleConfirmation} />
     </label>
-      <span>{props.task}</span>
+      <TaskName isEditing={props.isEditing}>
+        {props.task}
+      </TaskName>
       <div className="pull-right" role="group">
         <button
           type="button"

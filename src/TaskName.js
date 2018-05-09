@@ -8,7 +8,8 @@ const TaskName = props =>{
       <input
         type="text"
         value={props.children}
-        onChange={props.handleTaskEdits}/>
+        onChange={props.handleTaskEdits}
+        className="editInput"/>
     )}
     return <span>{props.children}</span>
 

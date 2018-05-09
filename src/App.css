@@ -22,3 +22,7 @@
 .list-group-item-success{
   text-decoration: line-through;
 }
+
+.editInput{
+  width: 75%;
+}
